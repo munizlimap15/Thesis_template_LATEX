@@ -1,0 +1,122 @@
+%here you can find some useful additional packages and macros
+
+%Package to show algorithms
+\usepackage{algorithm2e}
+
+%package to work with glossaries
+\usepackage[acronym]{glossaries}
+
+%packages and setings to show colored code
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%package to allow comments/notes by you and other people
+\usepackage[multiuser,marginclue,nomargin,inline,index]{fixme}
+\definecolor{ttwgreen}{RGB}{75,135,73}
+\fxusetheme{colorsig}
+%\FXRegisterAuthor{tm}{atm}{\color{red}TM}
+\FXRegisterAuthor{ttw}{attw}{\color{ttwgreen}TTW} % creates ttwnote, ttwwarning, ttwerror, ttwfatal commands
+%\FXRegisterAuthor{mk}{amk}{\color{blue}MK}
+
+%add your own packages or macros here
+
+\usepackage{booktabs} % for the table in section 2
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{minted} % for pieces of code
+\usepackage{soul}%for creating a background color over a text
+\setminted{ fontsize=\small, breaklines=true, 
+  breakafter={.,\space}, breakbytokenanywhere=true, 
+  frame=single, numbers=left, 
+  numbersep=5pt,highlightcolor={red!20}, 
+  fontfamily=tt
+}
+\usepackage{dashrule}
+%%%%%%%%%%% The next line is for making header/footer
+\newcommand{\changefont}{\fontsize{9}{11}\selectfont}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\changefont \nouppercase\leftmark}
+\fancyhead[RO]{ \changefont Your title here\\ Modify at "main.tex" =)}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[LE,RO]{ \changefont \nouppercase\thepage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+%\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{lscape} % to make landscape pages
+\usepackage{lipsum} % just for dummy text- not needed for a longtab
+\usepackage{blindtext}% For dummy text
+\usepackage{wrapfig} % to wrap text around figure
+\usepackage{mwe}% for parbox and the wrapfigure
+
+\usepackage[export]{adjustbox}
+
+%\usepackage[dvipsnames]{xcolor}
+% important update for glossaries, before document 
+\loadglsentries{CBackMatter/Listofacronyms.tex}
+\loadglsentries{CBackMatter/glossary.tex} 
+\makeglossaries %https://www.overleaf.com/learn/latex/glossaries
+
+\usepackage[english]{babel} 
+\usepackage{glossaries}
+\usepackage{pdfpages}
+\setcounter{tocdepth}{3}    % make the sub-subchapters visible (or not) in the tables of content
+\setcounter{secnumdepth}{2} % This sets or not the counter to the "subsubsection". If "2" no, if "3" there will be a number in the "subsubsection"
+
+\usepackage[sort&compress, square]{natbib}%\usepackage{natbib}
+\usepackage{har2nat}
+\bibliographystyle{SageH2}%{agsm} 
+\hypersetup{colorlinks, citecolor=blue, linkcolor=black, urlcolor=blue}
+\setcitestyle{authoryear,open={(},close={)}}
+
+%The next 3 lines make the figures numbered continuously. Otherwise, they would have chapter number  
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\usepackage{tocbasic}
+\DeclareTOCStyleEntry[entrynumberformat=\entrynumberwithprefix{\figurename}, dynnumwidth, numsep=1em]{tocline}{figure}
+\DeclareTOCStyleEntry[entrynumberformat=\entrynumberwithprefix{\tablename}, dynnumwidth, numsep=1em]{tocline}{table}
+\newcommand\entrynumberwithprefix[2]{#1\enspace#2:\hfill}
+
+%\usepackage[backend=biber, style=authoryear, sorting=ynt]{biblatex}
+%\addbibresource{Slope_units_ref.bib}
+
+\KOMAoptions{headings=openany}% This removes the EMPTY pages in between sections
+\usepackage[font=small, format=plain]{caption} %Reduce fontsize of the captions'  
+\renewcommand{\footnotesize}{\fontsize{7pt}{9pt}\selectfont}
+\usepackage[toc,page]{appendix}
+%add the additional packages and macros that you want to use

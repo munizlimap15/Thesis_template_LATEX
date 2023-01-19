@@ -1,0 +1,93 @@
+%loads the class that provides the titlepage and some general packages.
+\documentclass{UniVieCS_Thesis} 
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+
+\usepackage{epstopdf}
+\epstopdfDeclareGraphicsRule{.tif}{png}{.png}{convert #1 \OutputFile}
+\AppendGraphicsExtensions{.tif}
+\input{packages}
+
+
+\begin{document}
+
+\fontfamily{phv}%Font Helvetica -> https://www.overleaf.com/learn/latex/Font_typefaces
+    %Start with front matter
+    
+    %Choose the titlepage you want to use
+    \input{AFrontMatter/titlepage} %Creates the titlepage
+    
+    %\clearpage
+	\frontmatter{}
+        %\input{AFrontMatter/Eigenständigkeitserklärung} 
+        \renewcommand*\contentsname{Table of contents}
+	\tableofcontents{}        
+	\input{AFrontMatter/abstract_de} % adds the abstract
+        \input{AFrontMatter/abstracts} % adds the abstract
+        \input{AFrontMatter/acknowledgements} %adds the aknowledgements
+	\input{AFrontMatter/Disclaimer_and_structure}
+	%\input{A) Front Matter/kurzfassung} %adds the "Kurzfassung"in german.
+	
+	\pagebreak
+	
+    \microtypesetup{protrusion=false}
+    
+% Use an optional list of tables/figures/algorithms/listings(code).
+    %\listoffigures
+    %\listoftables 
+    {\listoffigures \let\cleardoublepage\clearpage \listoftables} %Avoid blank page only between \listoffigures and \listoftables
+    \printglossary[type=\acronymtype,nonumberlist]
+    %\cleardoublepage{}
+    %\listofalgorithms
+    %\addcontentsline{toc}{chapter}{List of Algorithms} 
+    %\cleardoublepage{}
+    \cleardoublepage{}
+    \microtypesetup{protrusion=true}
+   
+	\pagebreak
+	
+	%add your chapters here
+	\mainmatter{}
+	\renewcommand{\chapterpagestyle}{fancy}
+	
+	\input{BChapters/01_Introduction}
+	\input{BChapters/02_Theoretical_background}
+	\input{BChapters/04_ResearchGaps_edit}
+	\input{BChapters/05_StudyArea}
+	\input{BChapters/06_Materials}
+	\input{BChapters/07_Methods}
+	\input{BChapters/08_Results}
+	\input{BChapters/09_Discussion}
+	\input{BChapters/10_Conclusions}
+	%%\input{BChapters/11_ResearchContributions}
+	%%\input{BChapters/12_Perspectives}
+	
+
+	%add your sources in the bib file and change the style here
+    %\bibliographystyle{dinat} %plainnat
+    
+    %\printbibliography
+    
+   \footnotesize 
+   \begin{multicols}{2}%make bibliography in 2 columns
+   \renewcommand\bibname{References}
+   \bibliography{references}
+   \end{multicols}
+   \normalsize
+	
+
+    \hypersetup{urlcolor=blue}
+	\begin{appendices}
+        %\input{AFrontMatter/Thesis_structure} % adds the abstract
+	%\input{CBackMatter/A_appendix_review_public}
+	\input{CBackMatter/B_appendix_WLF_2017}
+	%\input{CBackMatter/C_appendix_Slope_units_public}
+	%\input{CBackMatter/D_appendix_Lin_public_2020}
+	%\input{CBackMatter/E_Brazilian_public}
+
+        \end{appendices}
+        
+
+	
+	
+	
+\end{document}

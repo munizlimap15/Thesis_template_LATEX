@@ -1,0 +1,22 @@
+% -- Metadata 
+% during compliation the MSc_Latex_Template.xml file is created
+% it contains the metadata
+% if you cange the metadata remember to delete the cached files https://www.overleaf.com/learn/how-to/Clearing_the_cache
+
+\usepackage{filecontents}
+\begin{filecontents*}{\jobname.xmpdata}
+
+% -- Add, remove and change your metadata here
+% a list of the supported fields can be found at http://texdoc.net/texmf-dist/doc/latex/pdfx/pdfx.pdf#subsection.2.3
+
+\Title{Doctoral Thesis}
+\Author{Pedro Henrique Muniz Lima}
+\Copyright{Copyright \copyright\ 2022 "Pedro Henrique Muniz Lima"}
+\Keywords{Doctoral Thesis\sep
+          Geography\sep
+          University of Vienna}
+\Subject{Statistical methods have been often applied to predict the landslide susceptibility (LS) over very large areas. However, the majority of the available research items in the topic, relies over flawed, incomplete, and low-quality input data, which is often the only existing data to be used for modelling. The drawbacks originated from such input datasets deficiencies, are often pointed out, sometimes debated on the discussion sections, but seldom actively counteracted. What some innovative research have showed, is that adaptations on the research design might reduce the adverse consequences of such flawed input data. This thesis, by using as main study area, the territory of Austria, aimed to evaluate the importance of how an adapted research design might increase the performance and reliability of the predictions especially for such very large areas. 
+This thesis is structured in work packages (WP) as it follows: To get an overview of the current research scenario; challenges and limitations of data-driven LS models, a review study (WP\#1) was continuously conducted over last years. From theory to practice, the Austrian territory was modelled using a frequently used approach in literature (WP \#2), to identify potential limitations and serve as reference model to following research. For that, the most applied classifier in the field, logistic regression, was selected, complemented with a standard research design. The results demonstrated the vulnerability of the predictions maps towards a reduced quality of input datasets, and beyond that, the gain of adapting the research design to the dataset weaknesses. Latter (WP \#3), a standardized modelling unit, pixels, was compared with the usage of an alternative modelling unit (slope units). Also, to reduce the effects of biased landslide inventories, Mixed-effects logistic regression models were compared against the typically applied Fixed-effects logistic regression. Exploring if the challenges faced by modelers aiming to predict LS of very large regions using statistical methods are similar, an adapted research design was, in collaboration (as co-author), conducted over the territory of China (WP \#4). In this research, the Mixed-effects, this time applied to the GAM (Generalized additive model), confirming its potential to increase the quality of the outcomes. However, when modelling very large areas, having available only points as the landslide samples, one concern emerged. Are the predictions build using limited landslide inventories, also able to predict the whole (release + runout zones) landslide impact phenomena? For that, a 54km\textsuperscript{2} catchment situated in the Municipality of Nova Friburgo, Brazil, was selected (WP \#5). The outcomes demonstrated a potential underestimation of the downslope landslide threat, especially by the scarp-trained models.}
+
+\Org{University of Vienna}
+\end{filecontents*}
